@@ -13,7 +13,7 @@ export default function Register() {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-
+    console.log("123");
     try {
       const res = await fetch("/api/users", {
         method: "POST",
@@ -24,6 +24,8 @@ export default function Register() {
       });
 
       const data = await res.json();
+      console.log("DATA ");
+      console.log("DATA ", res);
       if (res.ok) {
         setSuccess("Kayıt başarılı! Giriş sayfasına yönlendiriliyorsunuz...");
         setTimeout(() => {
